@@ -16,6 +16,9 @@ Tags: Tema dabuting
     -ms-user-select: none;
     user-select: none;
   }
+  body > main > div.container > div.col-md-4 > figure > a > img{
+    width: 100%;
+  }
 
   @media (min-width: 768px) {
     .bd-placeholder-img-lg {
@@ -25,7 +28,7 @@ Tags: Tema dabuting
 
   body {
     padding-top: 3.5rem;
-    background-color: red;
+    
   }
 
   
