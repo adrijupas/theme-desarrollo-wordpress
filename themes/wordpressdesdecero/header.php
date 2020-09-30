@@ -7,16 +7,21 @@
     <meta name="description" content="<?php bloginfo('description') ?>">
     <title><?php bloginfo('name') ?></title>
 
-    
-
-
-    
 
     <?php wp_head() ?>
   </head>
   <body <?php body_class(); ?>>
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-  <a class="navbar-brand" href="<?php bloginfo('url') ?>"><?php bloginfo('name') ?></a>
+      <?php 
+      if ( function_exists( 'the_custom_logo' ) ) {
+        the_custom_logo();
+       }else{?>
+       <a class="navbar-brand" href="<?php bloginfo('url') ?>"><?php bloginfo('name') ?></a>
+       <?php  
+       }
+       ?>
+      
+  
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -36,10 +41,17 @@
 <main role="main">
 
   <!-- Main jumbotron for a primary marketing message or call to action -->
-  <div class="jumbotron">
+  <div class="jumbotron" id="cabecera">
     <div class="container">
-      <h1 class="display-3"><?php bloginfo('name'); ?></h1>
-      <h2><?php bloginfo('description') ?></h2>
-      <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
+      <div class="card bg-dark text-black ">
+
+      <img class="card-img" alt="" src="<?php header_image(); ?>" width="<?php echo absint( get_custom_header()->width ); ?>" height="<?php echo absint( get_custom_header()->height ); ?>">
+      
+      <div class="card-img-overlay">
+        <h1 class="card-title"><?php bloginfo('name'); ?></h1>
+        <ph2 class="card-text"><?php bloginfo('description') ?></h2>
+      </div>
+    </div>
     </div>
   </div>
+

@@ -58,6 +58,38 @@ add_filter('excerpt_length','excerpt_personalizado');
 
 add_theme_support('post-thumbnails');
 
+//añadimos soporte para custom header 
+
+function imagen_custom_header() {
+    $args = array(
+        'default-image'  	=> get_template_directory_uri() . '/img/default-image.jpg',
+        'default-text-color' => '000',
+        'width'          	=> 1000,
+        'height'         	=> 250,
+        'flex-width'     	=> true,
+        'flex-height'    	=> true,
+    );
+    add_theme_support( 'custom-header', $args );
+}
+add_action( 'after_setup_theme', 'imagen_custom_header' );
+
+//añadimos soporte a logotipo personalizado
+
+function logo_custom() {
+    $defaults = array(
+    'height'      => 75,
+    'width'       => 300,
+    'flex-height' => true,
+    'flex-width'  => true,
+    'header-text' => array( 'site-title', 'site-description' ),
+   'unlink-homepage-logo' => true, 
+    );
+    add_theme_support( 'custom-logo', $defaults );
+   }
+   add_action( 'after_setup_theme', 'logo_custom' );
+
+
+
 // shortcode
 
 function firma_guay(){

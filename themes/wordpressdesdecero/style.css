@@ -7,6 +7,16 @@ Version: 0.0.1
 Tags: Tema dabuting 
 
 */
+body {
+  padding-top: 3.5rem;
+ 
+}
+
+.card-img{
+  background-position: cover;
+}
+
+
 
 .bd-placeholder-img {
     font-size: 1.125rem;
@@ -26,9 +36,6 @@ Tags: Tema dabuting
     }
   }
 
-  body {
-    padding-top: 3.5rem;
-    
-  }
+  
 
   
